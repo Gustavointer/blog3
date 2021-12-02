@@ -1,0 +1,14 @@
+.sem-margem{
+    margin: 0;
+}
+.editar-post{
+    margin-top: 0;
+}
+.excluir-post{
+    float: right;
+}
+.head-excluir{
+    background-image: url('../assets/img/delete.jpg') !important;
+    background-size: 500px !important;
+    background-position: center !important;
+}
