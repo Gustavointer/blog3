@@ -6,7 +6,7 @@
 <div class="row">
     <div class="col">
         <p>Sejam bem-vindos à página de usuários</p>
-        <a class="btn btn-primary" href="{{route('usuarios.inserir')}}" role="button">Cadastrar usuário</a>
+        <a class="btn btn-primary" href="{{route('usuario.inserir')}}" role="button">Cadastrar usuário</a>
     </div>
 </div>
 <div class="row">
@@ -16,11 +16,11 @@
             <th>Nome</th>
             <th>E-mail</th>
         </tr>
-        @foreach($usuarios as $usuario)
+        @foreach($usuario as $user)
         <tr>
-            <td>{{$usuario->id}}</td>
-            <td>{{$usuario->nome}}</td>
-            <td>{{$usuario->email}}</td>
+            <td>{{$user->id}}</td>
+            <td>{{$user->nome}}</td>
+            <td>{{$user->email}}</td>
         </tr>
         @endforeach
     </table>

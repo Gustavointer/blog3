@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ControllerUsuarios;
+use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\ControllerPost;
 use App\Http\Controllers\ContatoController;
+use App\Models\Usuario;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,10 +29,12 @@ Route::get('/editar', function(){
     return view('editar');
 })->name('editar');
 
-Route::get('/excluir', [ControllerPost::class, 'excluir'])->name('excluir');
+Route::get('/post/excluir', [ControllerPost::class, 'excluir'])->name('excluir');
 
 Route::get('/post', [ControllerPost::class, 'index'])->name('post');
 
 Route::get('/contato', [ContatoController::class, 'index'])->name('contato');
 
+Route::get('/login', [UsuarioController::class, 'login'])->name('login');
 
+Route::get('/usuario/inserir', [UsuarioController::class, 'insert'])->name('usuario.inserir');
