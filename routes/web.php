@@ -37,4 +37,6 @@ Route::get('/contato', [ContatoController::class, 'index'])->name('contato');
 
 Route::get('/login', [UsuarioController::class, 'login'])->name('login');
 
-Route::get('/usuario/inserir', [UsuarioController::class, 'insert'])->name('usuario.inserir');
+Route::get('/usuario/inserir', [UsuarioController::class, 'create'])->name('usuario.inserir');
+
+Route::post('/usuario/inserir', [UsuarioController::class, 'insert'])->name('usuario.inserir');

@@ -19,7 +19,7 @@ class UsuarioController extends Controller
 
     public function create()
     {
-        return view('usuarios.create', ['pagina' => 'usuarios']);
+        return view('login.create', ['pagina' => 'usuarios']);
     }
 
     public function insert(Request $form)
@@ -32,9 +32,7 @@ class UsuarioController extends Controller
         $usuario->password = Hash::make($form->password);
 
         $usuario->save();
-        event(new Registered($usuario));
-        return redirect()->route('verification.notice');
-        return redirect()->route('usuarios.index');
+        return redirect()->route('home');
     }
 
     // Ações de login

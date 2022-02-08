@@ -13,8 +13,8 @@
         <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-        <link href="css/pessoal.css" rel="stylesheet" />
+        <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
+        <link href="{{asset('css/pessoal.css')}}" rel="stylesheet" />
     </head>
     <body>
         <!-- Navigation-->
@@ -45,7 +45,7 @@
             </div>
         </nav>
         <!-- Page Header-->
-        <header class="masthead @yield('ajustecss')" style="background-image: url(assets/img/@yield('imagem'))">
+        <header class="masthead @yield('ajustecss')" style="background-image: url({{asset('assets/img')}}/@yield('imagem'))">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
