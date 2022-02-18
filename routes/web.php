@@ -36,7 +36,22 @@ Route::get('/post', [ControllerPost::class, 'index'])->name('post');
 Route::get('/contato', [ContatoController::class, 'index'])->name('contato');
 
 Route::get('/login', [UsuarioController::class, 'login'])->name('login');
+Route::post('/login', [UsuarioController::class, 'login'])->name('login');
+
+Route::get('/logout', [UsuarioController::class, 'logout'])->name('logout');
 
 Route::get('/usuario/inserir', [UsuarioController::class, 'create'])->name('usuario.inserir');
 
 Route::post('/usuario/inserir', [UsuarioController::class, 'insert'])->name('usuario.inserir');
+
+Route::get('/post/inserir', [ControllerPost::class, 'create'])->name('post.inserir');
+
+Route::post('/post/inserir', [ControllerPost::class, 'insert'])->name('post.inserir');
+
+Route::get('/post/editar', [ProdutosController::class, 'edit'])->name('post.edit');
+
+Route::put('/post/editar', [ProdutosController::class, 'update'])->name('post.update');
+
+Route::get('/post/apagar', [ProdutosController::class, 'remove'])->name('post.remove');
+
+Route::delete('/post/apagar', [ProdutosController::class, 'delete'])->name('post.delete');

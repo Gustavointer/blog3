@@ -29,9 +29,7 @@
                         &middot; Images by
                         <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>
                     </p>
-                    <button><i class="bi bi-hand-thumbs-up">Like</i></button>
-                    <button><i class="bi bi-hand-thumbs-down">Deslike</i></button>
-                    <button><i class="bi bi-share-fill">Compartilhar</i></button>
+                    <a href="{{route('editar')}}" class="editar-post">Editar post</a> <a href="{{route('excluir')}}" class="excluir-post">Excluir post</a>
                 </div>
             </div>
         </div>
