@@ -17,21 +17,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [ControllerPost::class, 'home'])->name('home');
 
-Route::get('/sobremim', function(){
+Route::get('/sobremim', function () {
     return view('sobre');
 })->name('sobremim');
 
-Route::get('/editar', function(){
-    return view('editar');
-})->name('editar');
-
-Route::get('/post/excluir', [ControllerPost::class, 'excluir'])->name('excluir');
-
-Route::get('/post', [ControllerPost::class, 'index'])->name('post');
 
 Route::get('/contato', [ContatoController::class, 'index'])->name('contato');
 
@@ -44,14 +35,20 @@ Route::get('/usuario/inserir', [UsuarioController::class, 'create'])->name('usua
 
 Route::post('/usuario/inserir', [UsuarioController::class, 'insert'])->name('usuario.inserir');
 
-Route::get('/post/inserir', [ControllerPost::class, 'create'])->name('post.inserir');
+Route::get('/post/inserir', function () {
+    return view('post.create');
+})->name('post.inserir');
 
-Route::post('/post/inserir', [ControllerPost::class, 'insert'])->name('post.inserir');
+Route::post('/post/inserir', [ControllerPost::class, 'insert'])->name('post.insert');
 
-Route::get('/post/editar', [ProdutosController::class, 'edit'])->name('post.edit');
+Route::get('/post/{post}', [ControllerPost::class, 'index'])->name('post');
 
-Route::put('/post/editar', [ProdutosController::class, 'update'])->name('post.update');
+Route::get('/post/{post}/editar', [ControllerPost::class, 'edit'])->name('post.edit');
 
-Route::get('/post/apagar', [ProdutosController::class, 'remove'])->name('post.remove');
+Route::put('/post/{post}/editar', [ControllerPost::class, 'update'])->name('post.update');
 
-Route::delete('/post/apagar', [ProdutosController::class, 'delete'])->name('post.delete');
+Route::any('/post/{post}/apagar', [ControllerPost::class, 'delete'])->name('post.delete');
+
+Route::post('/post/{post}/fav', [ControllerPost::class, 'handleFav'])->name('post.favorito');
+
+Route::post('/post/{post}/like', [ControllerPost::class, 'handleLike'])->name('post.like');
