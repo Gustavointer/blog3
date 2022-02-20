@@ -39,7 +39,7 @@
 
         <form method="post" action="{{route('login')}}">
             @csrf
-            <h1 class="h3 mb-3 fw-normal">123Faça seu login</h1>
+            <h1 class="h3 mb-3 fw-normal">Faça seu login</h1>
             <div class="form-floating">
                 <input type="text" class="form-control" id="floatingInput" placeholder="Usuário" name="username">
                 <label for="floatingInput">Usuário</label>

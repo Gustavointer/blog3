@@ -17,6 +17,7 @@
                 <p class="post-meta">
                     Posted by {{$p->usuario}}
                 </p>
+                <a href="whatsapp://send?text=Compartilhar esse post">Compartilhar esse post</a>
                 @if (!empty(Auth::user()->id))
                 <form method='post' action="{{route('post.like', $p)}}">
                     @csrf

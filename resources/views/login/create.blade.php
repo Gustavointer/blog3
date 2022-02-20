@@ -2,8 +2,8 @@
 @section('imagem','pipabento.jpg')
 
 @section('conteudo')
-<div class="row">
-    <div class="col-4">
+<div class="row justify-content-center">
+    <div class="col-4" style='text-align:center'>
         <form method="post" action="{{route('usuario.inserir')}}">
             @csrf
             <div class="mb-3">
